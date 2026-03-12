@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadoras Matemáticas</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Calculadoras Matemáticas</h1>
+      <p>Elige una calculadora y úsala normalmente. Si introduces su código correcto, se abrirá la sección de juegos.</p>
+    </header>
+
+    <main>
+      <section id="calculators" class="grid"></section>
+
+      <section id="games" class="hidden">
+        <div class="games-header">
+          <h2>Zona de juegos</h2>
+          <button id="exitGames" class="secondary">Salir y volver a calculadoras</button>
+        </div>
+
+        <p>Puedes añadir accesos rápidos a tus videojuegos favoritos:</p>
+        <div class="upload-row">
+          <input id="gameName" type="text" placeholder="Nombre del juego" />
+          <input id="gameUrl" type="url" placeholder="URL del juego (https://...)" />
+          <button id="addGame">Subir videojuego</button>
+        </div>
+
+        <ul id="gameList" class="game-list"></ul>
+      </section>
+    </main>
+
+    <template id="calculatorTemplate">
+      <article class="card">
+        <h3></h3>
+        <label>
+          Ingresa un número
+          <input type="number" class="number-input" />
+        </label>
+        <div class="ops">
+          <button data-op="square">x²</button>
+          <button data-op="sqrt">√x</button>
+          <button data-op="sin">sin(x)</button>
+          <button data-op="cos">cos(x)</button>
+        </div>
+        <p class="result">Resultado: —</p>
+        <button class="unlock">Entrar a juegos</button>
+        <p class="hint"></p>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
